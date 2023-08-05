@@ -1,0 +1,22 @@
+<h5>Diretiva *ngSwitch</h5>
+
+<p>OBS. É excelente para usar em barra de navegação</p>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" [class.active]="aba == 'home'" (click)="aba='home'">Home</a>
+            <a class="nav-item nav-link active" [class.active]="aba == 'mapa'" (click)="aba='mapa'">Mapa</a>
+            <a class="nav-item nav-link active" [class.active]="aba == 'lista'" (click)="aba='lista'">Lista</a>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+<div class="container" [ngSwitch]="aba">
+    <p *ngSwitchCase="'mapa'"> Modo Mapa ativado!</p>
+    <p *ngSwitchCase="'lista'"> Modo Lista ativado!</p>
+    <p *ngSwitchDefault> Home </p>
+</div>
